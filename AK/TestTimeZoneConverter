@@ -1,0 +1,25 @@
+using NUnit.Framework;
+using System;
+
+namespace TimeZoneConverter
+{
+    [TestFixture]
+    class TimeZoneConverterTest
+    {
+        [Test]
+        public void CheckConvertToEst()
+        {
+            // Arrange
+            DateTime timeNow = DateTime.Now;
+            DateTime utcTimeResult = TimeZoneInfo.ConvertTimeToUtc(timeNow);
+
+            // Act
+            DateTime utcTimeNow = TimeZoneConverter.ConvertToUtc(timeNow);
+
+            // Assert
+            Assert.AreEqual(utcTimeResult, utcTimeNow);
+
+        }
+   
+    }
+}
